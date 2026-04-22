@@ -82,7 +82,7 @@ colors = {"CRC": "red", "control": "blue"}
 for o in np.unique(conditions):
     mask = conditions == o
     ax.scatter(
-        coords[mask, 0], coords[mask, 1],
+        coords[mask, 0], coords[mask, 1], coords[mask, 2],
         s=70, edgecolors="white", linewidth=1.0, alpha=0.85,
         label=o, color=colors.get(o)
     )
@@ -90,7 +90,7 @@ for o in np.unique(conditions):
 plt.title("PCoA of Microbiome Data (Bray-Curtis)")
 ax.set_xlabel(f"PC1 ({var_explained_3D[0]:.1f}%)")
 ax.set_ylabel(f"PC2 ({var_explained_3D[1]:.1f}%)")
-ax.set_zlabel(f"PC2 ({var_explained_3D[2]:.1f}%)")
+ax.set_zlabel(f"PC3 ({var_explained_3D[2]:.1f}%)")
 plt.grid(True, linestyle="--", alpha=0.5)
 plt.legend()
 plt.tight_layout()
